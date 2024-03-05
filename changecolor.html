@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        /* width: 50vw;
+        height: 50vh; */
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .first{
+        width: 20vh;
+        height: 10vw;
+        border:2px solid black;
+        /* background-color: red; */
+        margin: 5px;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="first"></div>
+        <div class="first"></div>
+        <div class="first"></div>
+        <div class="first"></div>
+        <div class="first"></div>
+    </div>
+    <button id="btn">change color </button>
+</body>
+<script>
+    let btn = document.getElementById('btn')
+    const changecolor = () =>{
+        let clr1 = Math.floor(Math.random() * 255);
+        let clr2 = Math.floor(Math.random() * 255);;
+        let clr3 = Math.floor(Math.random() * 255);;
+        return `rgb(${clr1} , ${clr2} , ${clr3})`
+    }
+        let box = document.getElementsByClassName("first")
+        let a = Array.from(box)
+        a.forEach(e => {
+            e.style.backgroundColor = changecolor()
+    })
+    
+    btn.addEventListener("click" , () => {
+        location.reload()
+    })
+</script>
+</html>
